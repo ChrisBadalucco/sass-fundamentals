@@ -26,6 +26,11 @@
 }
 
 @mixin button-base($color) {
+  @if lightness($color) < 70% {
+    color: #fff;
+  } @else {
+    color: #000;
+  }
   background-color: $color;
   border-color: darken($color, 20%);
   &:hover:not(:disabled) {
